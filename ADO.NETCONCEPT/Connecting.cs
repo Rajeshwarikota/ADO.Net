@@ -40,5 +40,41 @@ namespace ADO.NETCONCEPT
                     // Additional cleanup code can be added here, such as closing additional resources
                 }
             }
+        public void Command()
+        {
+            {
+                SqlConnection con = null;
+                try
+                {
+                    // Creating Connection
+                    con = new SqlConnection("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = FILM; Integrated Security = True");
+
+                    // Writing SQL query
+                    SqlCommand cm = new SqlCommand("SELECT * FROM actor", con);
+
+                    // Opening Connection
+                    con.Open();
+
+                    // Executing the SQL query
+                    SqlDataReader sdr = cm.ExecuteReader();
+
+                    // Reading and displaying actor data
+                    while (sdr.Read())
+                    {
+                        Console.WriteLine(sdr["name"] + " " + sdr["email"]);
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Oops, something went wrong: " + e);
+                }
+                finally
+                {
+                    // Closing the connection
+                    con?.Close();
+                }
+            }
         }
+
+    }
 }
