@@ -12,9 +12,12 @@ namespace ADO.NETCONCEPT
         {
             Console.WriteLine("...ADO NET....");
             Connecting con = new Connecting();
-            //con.Connection();
+            ////con.Connection();
             con.Command();
             con.DataReader();
+
+            DataManager data = new DataManager();
+            data.CreateTable();
             Console.ReadLine();
         }
     }
