@@ -14,6 +14,7 @@ namespace ADO.NETCONCEPT
             Connecting con = new Connecting();
             //con.Connection();
             con.Command();
+            con.DataReader();
             Console.ReadLine();
         }
     }
