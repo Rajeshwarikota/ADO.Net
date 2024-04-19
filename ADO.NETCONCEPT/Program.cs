@@ -11,6 +11,8 @@ namespace ADO.NETCONCEPT
         static void Main(string[] args)
         {
             Console.WriteLine("...ADO NET....");
+            Connecting con = new Connecting();
+            con.Connection();
             Console.ReadLine();
         }
     }
